@@ -9,5 +9,11 @@ $ mvn clean package
 ## Example usage
 
 ```java
-java -jar productparser-1.0-SNAPSHOT.jar "https://www.ceneo.pl/Filmy_Blu-ray/Gatunek:Komedie.htm"
+java -jar productparser-1.1-SNAPSHOT.jar "https://www.ceneo.pl/Filmy_Blu-ray/Gatunek:Komedie.htm" output.xml
 ```
+```java
+java -jar productparser-1.1-SNAPSHOT.jar "https://www.ceneo.pl/Filmy_Blu-ray/Gatunek:Komedie.htm" output.json -q
+```
+### Parameters
+**-q** enable multi threads base64 image generator
+

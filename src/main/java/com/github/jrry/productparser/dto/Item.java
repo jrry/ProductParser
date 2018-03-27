@@ -5,14 +5,39 @@ import java.math.BigDecimal;
 public class Item {
     private String name;
     private BigDecimal minimalPrice;
-    private String imageBase64;
+    private String imageInBase64;
 
-    public Item() {};
+    public Item() {}
 
-    public Item(String name, BigDecimal minimalPrice, String imageBase64) {
-        this.name = name;
-        this.minimalPrice = minimalPrice;
-        this.imageBase64 = imageBase64;
+    private Item(Builder builder) {
+        this.name = builder.name;
+        this.minimalPrice = builder.minimalPrice;
+        this.imageInBase64 = builder.imageInBase64;
+    }
+
+    public static class Builder {
+        private String name;
+        private BigDecimal minimalPrice;
+        private String imageInBase64;
+
+        public Builder name(String name) {
+            this.name = name;
+            return this;
+        }
+
+        public Builder minimalPrice(BigDecimal minimalPrice) {
+            this.minimalPrice = minimalPrice;
+            return this;
+        }
+
+        public Builder imageInBase64(String imageInBase64) {
+            this.imageInBase64 = imageInBase64;
+            return this;
+        }
+
+        public Item build() {
+            return new Item(this);
+        }
     }
 
     public String getName() {
@@ -31,11 +56,11 @@ public class Item {
         this.minimalPrice = minimalPrice;
     }
 
-    public String getImageBase64() {
-        return imageBase64;
+    public String getImageInBase64() {
+        return imageInBase64;
     }
 
-    public void setImageBase64(String imageBase64) {
-        this.imageBase64 = imageBase64;
+    public void setImageInBase64(String imageInBase64) {
+        this.imageInBase64 = imageInBase64;
     }
 }

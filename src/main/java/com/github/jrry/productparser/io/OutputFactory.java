@@ -5,6 +5,9 @@ public class OutputFactory {
         if (filename.endsWith(".xml")) {
             return new XmlOutput(filename);
         }
+        if (filename.endsWith(".json")) {
+            return new JsonOutput(filename);
+        }
         return null;
     }
 }
